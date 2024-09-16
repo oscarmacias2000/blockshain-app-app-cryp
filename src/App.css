@@ -1,0 +1,250 @@
+body {
+	height: 100%;
+	width: 100%;
+	background-color: white;
+	font-family: 'Source Code Pro', monospace;
+  }
+
+#mr-2{
+  display: flex;
+  padding-right: 20px
+};
+
+.contenido-image-buttons{
+  display: flex;
+  padding-right: 20px
+};
+
+
+@import url('https://fonts.googleapis.com/css?family=Lato:300,900');
+
+
+
+*, :after, :before {
+    box-sizing: border-box;
+}
+
+
+.canvas-wrapper {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	max-width: 100%;
+  width: 100%;
+  height: 70%;
+  position: absolute;
+  top: 75%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+	.canvas + .canvas {
+		margin-left: 40px;
+	}
+}
+.canvas {
+	position: relative;
+	display: block;
+	width: 400px;
+	height: 400px;
+	padding: 20px;
+	color: inherit;
+	text-decoration: none;
+}
+.canvas_border {
+	position: absolute;
+	top: 40px;
+	left: -40px;
+	height: 100%;
+	width: 100%;
+	z-index: 0;
+
+	svg {
+		height: 100%;
+		width: 100%;
+	}
+}
+.rect-gradient {
+	stroke-dasharray: 2000;
+	stroke-dashoffset: 2000;
+	animation: erase-line 1s ease-in-out forwards;
+}
+.canvas_img-wrapper {
+	position: absolute;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+	transform: rotate(-10deg) skew(-10deg);
+	overflow: hidden;
+	background: white;
+}
+.canvas_img {
+	transform: scale3d(.9,.9,.9);
+	opacity: .3;
+	max-width: 200px;
+	max-height: 200px;
+}
+.canvas_copy {
+	position: absolute;
+	bottom: 0;
+	left: 85%;
+	text-transform: uppercase;
+	color: #dac527;
+	z-index: 100;
+}
+.canvas_copy--left {
+	left: -25%;
+}
+
+.canvas_border, .canvas_img-wrapper {
+	transform: rotate(-10deg) skew(-10deg);	
+}
+.canvas_copy_title, .canvas_copy_subtitle, .canvas_copy_details {
+	opacity: 0;
+}
+.canvas:hover {
+	.canvas_copy_title, .canvas_copy_subtitle, .canvas_copy_details, .canvas_img {
+		opacity: 1;
+	}
+	.canvas_border, .canvas_img-wrapper {
+		transform: rotate(-14deg) skew(-14deg) scale(0.96);
+	}
+	.canvas_img {
+		transform: scale3d(1,1,1);
+	}
+	.canvas_copy_title, .canvas_copy_details {
+		transform: translateX(0);
+	}
+	.canvas_copy_subtitle {
+		transform: rotate(270deg) translateY(-100%) translateX(-100%);
+	}
+	.rect-gradient {
+		animation: draw-line 3s cubic-bezier(0.19, 1, 0.22, 1) forwards;
+	}
+}
+
+@keyframes draw-line {
+	from {
+		stroke-dashoffset: 2000;		
+	}
+	to {
+		stroke-dashoffset: 0;
+	}
+}
+@keyframes erase-line {
+	from {
+		stroke-dashoffset: 0;
+	}
+	to {
+		stroke-dashoffset: 2000;		
+	}
+}
+@keyframes fade-in {
+	from {
+		opacity: 0;
+	}
+	to {
+		opacity: 1;
+	}
+}
+
+
+@import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@300;400;500;600;700&display=swap');
+
+html {
+  box-sizing: border-box;
+  font-size: 100%;
+}
+
+*,*::before,*::after {
+  box-sizing: inherit;
+  margin: 0;
+  padding: 0;
+}
+
+
+body {
+  height: 100vh;
+  background-color: rgb(52, 52, 52);
+  font-family: 'Source Code Pro', monospace;
+}
+
+.container {
+  height: 100%;
+  width: 100%;
+  padding: 1rem 0;
+  display: grid;
+  place-content: center;
+  
+  .cards {    
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.75rem;
+    pointer-events: none;
+  }
+  
+  .card {
+    max-width: 15rem;
+    color: #ffffffda;
+    padding: 1.5rem;
+    background-color: #202022;
+    
+    pointer-events: auto;
+    
+    transform: scale(1);
+    opacity: 1;
+    transition: all 150ms ease-in-out; 
+    
+    display: flex;
+    flex-direction: column;
+    
+    .card-title {
+      position: relative;
+      
+      &::before {
+        content: "";
+        height: 1rem;
+        width: 1rem;
+        border-radius: 50%;
+        box-shadow: inset 0 0 3px #bb86fc;
+        background-color: transparent;
+        
+        position: absolute;
+        right: 0;
+      }
+    }
+    
+    .date {
+      color: #bb86fc;
+      font-size: 0.85rem;
+      margin-bottom: 1.5rem;
+    }
+    
+    .description {
+      font-size: 0.9rem;
+    }
+    
+    &:nth-child(even) {
+      transform: translateY(8px);
+    }
+    
+    &:nth-child(n) {
+      transform: rotate(-5deg);
+    }
+  }
+}
+
+.cards:hover > .card:hover {
+  transform: scale(1.15);
+  box-shadow: 0 0 10px rgba(0,0,0,0.5);
+  z-index: 10;
+}
+.cards:hover > .card:not(:hover) {
+  opacity: 0.5;
+};
+
+.Coins_2000{
+	column-gap: 5px;
+}
