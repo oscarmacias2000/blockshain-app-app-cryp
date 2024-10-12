@@ -1,4 +1,4 @@
-![Texto alternativo](https://midu.dev/images/wallpapers/javascript-small-horizontal-4k.png)
+![Texto alternativo](https://wallpapers.com/images/high/java-script-development-tools-logos-de7xl17b3y30x9au.webp)
 
 
 
