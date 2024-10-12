@@ -1,3 +1,8 @@
+![Texto alternativo](https://midu.dev/images/wallpapers/javascript-small-horizontal-4k.png)
+
+
+
+
 # React + Vite
 # Dev with tools like vite and react-bootsrap is great 
 # mi primera pagina web humildemente
